@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Angel]">
+  <test name="Default(failed)">
+    <classes>
+      <class name="angel_test">
+        <methods>
+          <include name="start_up"/>
+          <include name="AngelTest"/>
+          <include name="shut_down"/>
+        </methods>
+      </class> <!-- angel_test -->
+    </classes>
+  </test> <!-- Default(failed) -->
+</suite> <!-- Failed suite [Angel] -->

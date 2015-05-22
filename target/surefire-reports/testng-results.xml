@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Angel" duration-ms="9750" started-at="2015-05-22T15:00:56Z" finished-at="2015-05-22T15:01:06Z">
+    <groups>
+    </groups>
+    <test name="Default" duration-ms="9750" started-at="2015-05-22T15:00:56Z" finished-at="2015-05-22T15:01:06Z">
+      <class name="angel_test">
+        <test-method status="PASS" signature="start_up()[pri:0, instance:angel_test@2d209079]" name="start_up" is-config="true" duration-ms="3919" started-at="2015-05-22T18:00:56Z" finished-at="2015-05-22T18:01:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start_up -->
+        <test-method status="PASS" signature="AngelTest()[pri:0, instance:angel_test@2d209079]" name="AngelTest" duration-ms="4730" started-at="2015-05-22T18:01:00Z" finished-at="2015-05-22T18:01:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AngelTest -->
+        <test-method status="PASS" signature="shut_down()[pri:0, instance:angel_test@2d209079]" name="shut_down" is-config="true" duration-ms="1093" started-at="2015-05-22T18:01:05Z" finished-at="2015-05-22T18:01:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shut_down -->
+      </class> <!-- angel_test -->
+    </test> <!-- Default -->
+  </suite> <!-- Angel -->
+</testng-results>
