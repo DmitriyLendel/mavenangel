@@ -16,19 +16,21 @@ public class PasswordPage extends Bindings {
 	
 
 	public void setMasterPassword(String password) {
-		WebElement element = driver.findElement(By.xpath("html/body/form/table/tbody/tr[1]/td[2]/input"));
+		WebElement element = driver.findElement(By.cssSelector("form.callout input[name=master]"));
 		if (password == "") {
 			element.clear();
 		} else {
+			element.clear();
 			element.sendKeys(password);
 		}
 	}
 
 	public void setSiteName(String siteName) {
-		WebElement element = driver.findElement(By.xpath("html/body/form/table/tbody/tr[2]/td[2]/input"));
+		WebElement element = driver.findElement(By.cssSelector("form.callout input[name=site]"));
 		if (siteName == "") {
 			element.clear();
 		} else {
+			element.clear();
 			element.sendKeys(siteName);
 		}
 	}
@@ -36,7 +38,7 @@ public class PasswordPage extends Bindings {
 	public void clickGenerate() {
 		//click("rre");
 		
-		click(By.xpath("html/body/form/table/tbody/tr[3]/td/input"),driver);
+		click(By.cssSelector("form.callout input[type=submit]"),driver);
 		try{
 		Thread.sleep(2000);
 		}catch(Exception ex){}
@@ -45,12 +47,17 @@ public class PasswordPage extends Bindings {
 	
 
 	public void clearPassword() throws InterruptedException{
-		driver.findElement(By.name("password")).clear();
+		driver.findElement(By.cssSelector(".output input[name=password]")).clear();
 		Thread.sleep(4000);
 	}
 	
+	
+	public void RefreshPage(){
+		driver.navigate().refresh();
+	}
+	
 	public String getPassword() {
-		WebElement element = driver.findElement(By.name("password"));
+		WebElement element = driver.findElement(By.cssSelector(".output input[name=password]"));
 		return element.getAttribute("value");
 	}
 	

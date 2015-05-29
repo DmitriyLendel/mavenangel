@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9864" started-at="2015-05-22T14:50:30Z" finished-at="2015-05-22T14:50:40Z">
+  <suite name="Default suite" duration-ms="13825" started-at="2015-05-29T14:39:04Z" finished-at="2015-05-29T14:39:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9864" started-at="2015-05-22T14:50:30Z" finished-at="2015-05-22T14:50:40Z">
-      <class name="angel_test">
-        <test-method status="PASS" signature="start_up()[pri:0, instance:angel_test@4cdbe50f]" name="start_up" is-config="true" duration-ms="3969" started-at="2015-05-22T17:50:30Z" finished-at="2015-05-22T17:50:34Z">
+    <test name="Default test" duration-ms="13825" started-at="2015-05-29T14:39:04Z" finished-at="2015-05-29T14:39:18Z">
+      <class name="password_tes.angel_test">
+        <test-method status="PASS" signature="start_up()[pri:0, instance:password_tes.angel_test@c818063]" name="start_up" is-config="true" duration-ms="3701" started-at="2015-05-29T17:39:04Z" finished-at="2015-05-29T17:39:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start_up -->
-        <test-method status="PASS" signature="AngelTest()[pri:0, instance:angel_test@4cdbe50f]" name="AngelTest" duration-ms="4794" started-at="2015-05-22T17:50:34Z" finished-at="2015-05-22T17:50:39Z">
+        <test-method status="PASS" signature="testEquals()[pri:0, instance:password_tes.angel_test@c818063]" name="testEquals" duration-ms="4714" started-at="2015-05-29T17:39:08Z" finished-at="2015-05-29T17:39:13Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AngelTest -->
-        <test-method status="PASS" signature="shut_down()[pri:0, instance:angel_test@4cdbe50f]" name="shut_down" is-config="true" duration-ms="1087" started-at="2015-05-22T17:50:39Z" finished-at="2015-05-22T17:50:40Z">
+        </test-method> <!-- testEquals -->
+        <test-method status="PASS" signature="testGenerationPassword()[pri:0, instance:password_tes.angel_test@c818063]" name="testGenerationPassword" duration-ms="2163" started-at="2015-05-29T17:39:13Z" finished-at="2015-05-29T17:39:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGenerationPassword -->
+        <test-method status="PASS" signature="testSuffix()[pri:0, instance:password_tes.angel_test@c818063]" name="testSuffix" duration-ms="2134" started-at="2015-05-29T17:39:15Z" finished-at="2015-05-29T17:39:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuffix -->
+        <test-method status="PASS" signature="shut_down()[pri:0, instance:password_tes.angel_test@c818063]" name="shut_down" is-config="true" duration-ms="1101" started-at="2015-05-29T17:39:17Z" finished-at="2015-05-29T17:39:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shut_down -->
-      </class> <!-- angel_test -->
+      </class> <!-- password_tes.angel_test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
