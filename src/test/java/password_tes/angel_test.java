@@ -24,18 +24,13 @@ public class angel_test {
 	@BeforeClass
 	public void start_up() throws InterruptedException {
 
-		//System.setProperty("webdriver.chrome.driver",
-			//	"D:\\eclipse\\lib\\chromedriver.exe");
-
 		driver = new ChromeDriver();
-	    //driver = new FirefoxDriver();
+	    /
 		passwordForm = new PasswordPage(driver);
 		
 		driver.get("http://oxogamestudio.com/passwd.current6.htm");
-		//wait.until(ExpectedConditions.presenceOfElementLocated(By
-				//.cssSelector("form.callout input[name=master]")));
-		passwordForm= PageFactory.initElements(driver, PasswordPage.class);
 	
+		passwordForm= PageFactory.initElements(driver, PasswordPage.class);
 		
 		driver.manage().window().maximize();
 		TimeUnit.SECONDS.sleep(3);
@@ -52,14 +47,7 @@ public class angel_test {
 
 		String pass = passwordForm.getPassword();
 		
-		// passwordForm.setMasterPassword("qwerty");
-		// passwordForm.setSiteName("123@mailinator.com");
-		// passwordForm.clickGenerate();
-
-		// String pass1 = passwordForm.getPassword();
-		// Assert.assertEquals(pass, pass1);
-		// System.out.println(pass + "+" + pass1);
-
+	
 		Assert.assertEquals(pass, "FtXaUrqbQsKhT@1a");
 		passwordForm.RefreshPage();
 	}
