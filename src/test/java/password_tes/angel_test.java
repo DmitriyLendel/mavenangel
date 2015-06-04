@@ -1,5 +1,7 @@
 package password_tes;
 
+import java.util.concurrent.TimeUnit;
+
 import jdk.nashorn.internal.runtime.WithObject;
 import objects.PasswordPage;
 
@@ -7,38 +9,45 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
+
 public class angel_test {
 
-	private WebDriver driver;
-	private PasswordPage passwordForm;
+	 WebDriver driver;
+	 PasswordPage passwordForm;
 
 	@BeforeClass
-	public void start_up() {
+	public void start_up() throws InterruptedException {
 
-		System.setProperty("webdriver.chrome.driver",
-				"D:\\eclipse\\lib\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver",
+			//	"D:\\eclipse\\lib\\chromedriver.exe");
 
 		driver = new ChromeDriver();
-		// driver = new FirefoxDriver();
+	    //driver = new FirefoxDriver();
 		passwordForm = new PasswordPage(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 2000);
-		driver.get("http://angel.net/~nic/passwd.current.html");
-		wait.until(ExpectedConditions.presenceOfElementLocated(By
-				.cssSelector("form.callout input[name=master]")));
+		
+		driver.get("http://oxogamestudio.com/passwd.current6.htm");
+		//wait.until(ExpectedConditions.presenceOfElementLocated(By
+				//.cssSelector("form.callout input[name=master]")));
+		passwordForm= PageFactory.initElements(driver, PasswordPage.class);
+	
+		
 		driver.manage().window().maximize();
-
+		TimeUnit.SECONDS.sleep(3);
 	}
 
 	@Test
-	public void testGenerationPassword() {
+	public void testGenerationPassword() throws InterruptedException {
 
 		passwordForm.setMasterPassword("qwerty");
+	
 		passwordForm.setSiteName("123@mailinator.com");
+		
 		passwordForm.clickGenerate();
 
 		String pass = passwordForm.getPassword();
@@ -52,6 +61,7 @@ public class angel_test {
 		// System.out.println(pass + "+" + pass1);
 
 		Assert.assertEquals(pass, "FtXaUrqbQsKhT@1a");
+		passwordForm.RefreshPage();
 	}
 
 	@Test
@@ -68,6 +78,7 @@ public class angel_test {
 		String code2 = passwordForm.getPassword();
 
 		Assert.assertEquals(code1, code2);
+		passwordForm.RefreshPage();
 
 	}
 

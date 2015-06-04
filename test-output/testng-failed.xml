@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="Failed suite [Angel]">
-  <test name="password_tes(failed)">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
       <class name="password_tes.angel_test">
         <methods>
@@ -13,5 +13,5 @@
         </methods>
       </class> <!-- password_tes.angel_test -->
     </classes>
-  </test> <!-- password_tes(failed) -->
-</suite> <!-- Failed suite [Angel] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
