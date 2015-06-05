@@ -7,10 +7,13 @@ import objects.PasswordPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -24,6 +27,7 @@ public class angel_test {
 	@BeforeClass
 	public void start_up() throws InterruptedException {
 
+	
 		//System.setProperty("webdriver.chrome.driver",
 			//	"D:\\eclipse\\lib\\chromedriver.exe");
 
@@ -31,24 +35,27 @@ public class angel_test {
 	    //driver = new FirefoxDriver();
 		passwordForm = new PasswordPage(driver);
 		
-		driver.get("http://oxogamestudio.com/passwd.current6.htm");
+		driver.get("http://oxogamestudio.com/passwd.current7.htm");
 		//wait.until(ExpectedConditions.presenceOfElementLocated(By
 				//.cssSelector("form.callout input[name=master]")));
 		passwordForm= PageFactory.initElements(driver, PasswordPage.class);
 	
 		
 		driver.manage().window().maximize();
-		TimeUnit.SECONDS.sleep(3);
+		
 	}
 
 	@Test
 	public void testGenerationPassword() throws InterruptedException {
 
+	//	WebElement myElement = (new WebDriverWait(driver,1)).
+				//until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form.callout input[name=master]")));
+		
 		passwordForm.setMasterPassword("qwerty");
 	
 		passwordForm.setSiteName("123@mailinator.com");
 		
-		passwordForm.clickGenerate();
+		passwordForm.clickGenerate();		
 
 		String pass = passwordForm.getPassword();
 		
@@ -58,7 +65,7 @@ public class angel_test {
 
 		// String pass1 = passwordForm.getPassword();
 		// Assert.assertEquals(pass, pass1);
-		// System.out.println(pass + "+" + pass1);
+		System.out.println(pass + "******************************************************************************");
 
 		Assert.assertEquals(pass, "FtXaUrqbQsKhT@1a");
 		passwordForm.RefreshPage();

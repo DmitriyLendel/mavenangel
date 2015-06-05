@@ -8,7 +8,6 @@
           <include name="start_up"/>
           <include name="testSuffix"/>
           <include name="shut_down"/>
-          <include name="testEquals"/>
           <include name="testGenerationPassword"/>
         </methods>
       </class> <!-- password_tes.angel_test -->

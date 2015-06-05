@@ -1,9 +1,12 @@
 package objects;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PasswordPage {
 
@@ -26,44 +29,61 @@ public class PasswordPage {
 	private WebElement password;
 
 	public void setMasterPassword(String value) {
+
 		try {
 			setMasterPassword.sendKeys(value);
 		} catch (Exception ex) {
 			// System.out.println(ex.toString());
-			 //System.out.println("***************************************************");
-		
-				driver.findElement(
-						By.xpath("//td[text()=\"Site name\"]/../preceding::input[1]"))
-						.click();
-			}
+			// System.out.println("***************************************************");
+
+			driver.findElement(
+					By.xpath("//form//tr[1]/td[2]/input"))
+					.sendKeys(value);
 		}
-	
+	}
 
 	public void setSiteName(String value) {
 		try {
 			setSiteName.sendKeys(value);
 		} catch (Exception ex) {
 			driver.findElement(
-					By.xpath("//td[text()=\"Your master password\"]/../following::input[1]"))
-					.click();
+					By.xpath("//form//tr[2]/td[2]/input"))
+					.sendKeys(value);
 		}
 	}
 
 	public void clickGenerate() {
+		
 		try {
+			
 			clickGenerate.click();
+			
 		} catch (Exception ex) {
-			driver.findElement(By.xpath("//input[@type='submit']")).click();
+			
+			driver.findElement(By.xpath("//form//tr[3]/td/input]")).click();
+		
+			
 		}
-
+		
 	}
 
 	public boolean isPasswordTextEmpty() {
+		
 		return password.getAttribute("value").isEmpty();
 	}
 
 	public String getPassword() {
-		return password.getAttribute("value");
+		try {
+			
+			return password.getAttribute("value");
+		} catch (Exception ex) {
+			
+			return 
+					driver.findElement(By.xpath("//form//tr[4]/td[2]/input"))
+					.getAttribute("value");
+			
+		}
+
 	}
 
 	public void RefreshPage() {
@@ -93,11 +113,11 @@ public class PasswordPage {
  * public void setSiteName(String siteName) { WebElement element =
  * driver.findElement(By.cssSelector("form.callout input[name=site]")); if
  * (siteName == "") { element.clear(); } else { element.clear();
- * element.sendKeys(siteName); } }
+ * element.sendKeys(siteName); } }                                                //td[text()=\"Site name\"]/../preceding::input[1]"
  * 
  * public void clickGenerate() { //click("rre");
  * 
- * click(By.cssSelector("form.callout input[type=submit]"),driver); try{
+ * click(By.cssSelector("form.callout input[type=submit]"),driver); try{         xpath //td[text()=\"Your master password\"]/../following::input[1]
  * Thread.sleep(2000); }catch(Exception ex){} }
  * 
  * 

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [Angel]">
+  <test name="password_tes(failed)">
     <classes>
       <class name="password_tes.angel_test">
         <methods>
           <include name="start_up"/>
           <include name="testSuffix"/>
-          <include name="shut_down"/>
           <include name="testEquals"/>
           <include name="testGenerationPassword"/>
         </methods>
       </class> <!-- password_tes.angel_test -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- password_tes(failed) -->
+</suite> <!-- Failed suite [Angel] -->
